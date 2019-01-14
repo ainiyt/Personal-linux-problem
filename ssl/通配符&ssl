@@ -1,0 +1,13 @@
+＃下载Certbot客户端
+$ wget https://dl.eff.org/certbot-auto
+
+＃设为可执行权限
+$ chmod a + x certbot-auto
+
+＃可能只适合 .com 的国际域名
+./certbot-auto certonly -d“*。hp.scdu.top” -  manual --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory只只
+#适合top等域名
+sudo ./certbot-auto --server https://acme-v02.api.letsencrypt.org/directory -d "*.hp.scdu.top" --manual --preferred-challenges dns-01 certonly
+
+
+cd   /etc/letsencrypt/live/
