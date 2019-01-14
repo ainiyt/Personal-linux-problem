@@ -22,6 +22,8 @@ nohup /opt/frp/frpc -c /opt/frp/frpc.ini&
 
 exit 0
 
+sudo chown root:root /etc/rc.local
+sudo chmod 755 /etc/rc.local
 sudo systemctl enable rc-local.service
 
 
