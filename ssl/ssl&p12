@@ -1,0 +1,1 @@
+openssl pkcs12 -inkey privkey.pem -in cert.pem -export -out certificate.p12 -CAfile chain.pem -chain
