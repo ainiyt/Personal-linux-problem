@@ -1,0 +1,25 @@
+SSL：
+修改  /etc/apache2/sites-enabled/000-default-ssl.conf
+示例 ： 		ServerAdmin webmaster@localhost
+        ServerName web.hm.scdu.top:443
+        
+        SSLCertificateChainFile	/opt/hmssl/chain1.pem
+		SSLCertificateKeyFile /opt/hmssl/privkey1.pem
+        SSLCertificateFile    /opt/hmssl/cert1.pem
+        
+        完成后 创建软连接
+        ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/000-default-ssl.conf
+
+下面是配置 HTTPS 强制跳转
+打开/etc/apache2/sites-available/000-default.conf ，
+
+在 <VirtualHost*:80></VirtualHost> 标签内随便一个地方加入以下三行
+
+RewriteEngineon
+RewriteCond   %{HTTPS} !=on
+RewriteRule   ^(.*) https://%{SERVER_NAME}$1 [L,R]
+强制跳转https配置完毕，保存退出。
+使配置生效
+sudo a2enmod rewrite
+重启 apache
+sudo /etc/init.d/apache2restart
