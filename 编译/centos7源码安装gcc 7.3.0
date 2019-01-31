@@ -1,0 +1,56 @@
+查看当前的gcc版本：gcc  -v
+下载gcc 7.3.0的源码：https://mirrors.ustc.edu.cn/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz
+将源码上传至服务器然后解压
+mkdir -p /usr/local/gcc
+tar -xvf gcc-7.3.0.tar.gz -C /usr/local/gcc/
+
+解压完成后，编译安装gcc源码
+cd /usr/local/gcc/gcc-7.3.0/
+./contrib/download_prerequisites
+报错安装：yum -y install bzip2  解压要用
+
+建立编译输出目录，将所有的中间文件都放到该目录中
+
+ mkdir gcc-build-7.3.0
+ cd gcc-build-7.3.0/
+  cp ../gmp-6.1.0.tar.bz2 ./
+  cp ../mpfr-3.1.4.tar.bz2 ./
+  cp ../mpc-1.0.3.tar.gz ./
+  cp ../isl-0.16.1.tar.bz2 ./
+  
+  配置 ：
+   在当前目录执行：
+
+          ../configure --enable-checking=release --enable-languages=c,c++ --disable-multilib 
+          
+           参数解释： 
+
+         --enable-checking=release           //增加一些检查，也可以–disable-checking生成的编译器在编译过程中不做检查；
+
+         --enable-languages=c,c++          //让gcc支持的编程语言 ；
+
+         --disable-multilib               //取消多目标库编译(取消32位库编译)。
+
+make编译
+
+
+当前目录执行：make  -j4
+
+（编译时间较长，大概2小时）
+
+卸载旧版本的gcc，安装gcc7.3.0
+
+rpm -q gcc 
+rpm -q gcc-c++
+
+根据执行输出的包名执行
+
+rpm -e [包名]    卸载
+
+进入make的gcc目录进行安装：make install -j8
+
+验证
+    gcc -v
+    g++ -v
+     which gcc
+
