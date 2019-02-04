@@ -10,6 +10,7 @@ sudo pip install homeassistant
 #初始化
 hass ######--open-ui
 #最后一步
-nano /root/.homeassistant/configuration.yaml #注释虚拟选项
+nano /root/.homeassistant/configuration.yaml
+#注释虚拟选项
 ###########文件不存在的话 执行下一步#############
 find /  -name configuration.yaml
