@@ -1,0 +1,27 @@
+wget https://bootstrap.pypa.io/get-pip.py
+Python get-pip.py
+#以上最后执行
+###########查看版本#########
+ python --version
+ python3 --version
+###不用执行 备用##########
+sudo apt-get remove python #卸载
+apt-get autoremove
+##########安装Python环境##############
+apt-get install -y libffi-dev python-dev libevent-dev
+###########################
+
+#注意安装编译环
+#编译Python
+查找合适版本 https://link.jianshu.com/?t=https%3A%2F%2Fwww.python.org%2F
+#tar -xzvf Python-3.6.3.tgz -C /tmp
+#cd /tmp/Python-3.6.3/
+把Python3.6安装到 /usr/local 目录
+./configure --prefix=/usr/local
+make -j8   #-j8速度更快
+sudo make altinstall
+#################
+#完成后这里找文件 
+cd /usr/local/bin
+#找到后软连接到
+ln -s /usr/bin
