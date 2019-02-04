@@ -29,4 +29,4 @@ sudo make altinstall
 #完成后这里找文件 
 cd /usr/local/bin
 #找到后软连接到
-ln -s /usr/local/bin/python3.6  /usr/bi/python
+ln -s /usr/local/bin/python3.6  /usr/bin/python
