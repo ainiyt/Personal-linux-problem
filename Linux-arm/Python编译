@@ -14,6 +14,10 @@ apt-get install -y libffi-dev python-dev libevent-dev
 #注意安装编译环
 #编译Python
 查找合适版本 https://link.jianshu.com/?t=https%3A%2F%2Fwww.python.org%2F
+
+apt-get install - unzip
+
+
 #tar -xzvf Python-3.6.3.tgz -C /tmp
 #cd /tmp/Python-3.6.3/
 把Python3.6安装到 /usr/local 目录
