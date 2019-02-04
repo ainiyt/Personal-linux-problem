@@ -1,0 +1,21 @@
+1、sudo apt-get install samba
+如果遇到问题：
+Depends: samba-common (= 2:3.6.3-2ubuntu2) but 2:3.6.25-0ubuntu0.12.04.2 is……
+解决：
+sudo apt-get remove samba-common  
+sudo apt-get remove libwbclient0
+sudo apt-get install samba-client
+sudo nano /etc/samba/smb.conf
+ sudo smbpasswd -a admin
+##############################配置##############################
+
+[work]
+    comment = samba home directory
+    path = /mnt/sdcard1
+    public = yes
+    browseable = yes
+    writable = yes
+    
+    #############################
+    sudo service smbd restart
+    
