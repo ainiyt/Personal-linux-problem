@@ -1,0 +1,6 @@
+清除Linux系统上的所有日志而不删除文件：
+
+for CLEAN in $(find /var/log/ -type f)
+do
+    cp /dev/null  $CLEAN
+done
