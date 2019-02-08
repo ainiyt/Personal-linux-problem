@@ -1,0 +1,24 @@
+uname -m
+#arm64
+# 获取 root
+sudo su
+# add my public key
+wget -O - https://dev2day.de/pms/dev2day-pms.gpg.key | apt-key add -
+# add my PMS repo
+echo "deb [arch=armhf] https://dev2day.de/pms/ stretch main" >> /etc/apt/sources.list.d/pms.list
+# activate https
+apt-get install apt-transport-https
+# enable armhf support
+dpkg --add-architecture armhf 
+# update the repos
+apt-get update
+# install PMS
+apt-get install plexmediaserver-installer:armhf 
+
+service plexmediaserver restart
+netstat -lnp|grep 3240
+
+ usermod -a -G aid_inet,aid_net_raw  plex #添加网络权限
+
+#查看日志
+sudo tail -n 30 /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Logs/Plex\ Media\ Server.log
