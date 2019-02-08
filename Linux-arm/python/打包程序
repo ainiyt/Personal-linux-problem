@@ -1,0 +1,10 @@
+pip 19 会出现无法安装 需要降级
+#查看pip版本
+pip --version
+#降级
+pip install pip==18.1
+#安装打包程序
+ pip install  pyinstaller
+ #重新升级pip
+ python -m pip install --upgrade pip
+#完成
