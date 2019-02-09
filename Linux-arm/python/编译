@@ -36,4 +36,9 @@ python get-pip.py
 sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
 
 python3 -m pip install homeassistant
-hass --open-ui
+hass #--open-ui
+#修改虚拟选项
+nano /root/.homeassistant/configuration.yaml
+#注释虚拟选项
+###########文件不存在的话 执行下一步#############
+find /  -name configuration.yaml
