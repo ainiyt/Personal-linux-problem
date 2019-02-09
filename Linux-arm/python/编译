@@ -1,0 +1,17 @@
+#全新编译安装Python3.8
+sudo apt-get update& apt-get install -y wget ca-certificates    apt-transport-https  curl net-tools  dpkg  
+#安装编译工具
+apt install gcc make
+#下载源代码
+ wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0a1.tgz
+ #解压
+tar -zxvf Python-3.8.0a1.tgz
+#进入目录
+cd Python-3.8.0a1
+#执行编译命令
+ ./configure --prefix=/usr/local/python
+ #备选 +启用共享
+ # ./configure --prefix=/usr/local/python --enable-shared
+
+make -j2
+make install
