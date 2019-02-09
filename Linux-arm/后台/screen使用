@@ -1,0 +1,13 @@
+#安装screen
+sudo apt-get install screen
+#新建一个窗口
+screen -S  #窗口名字
+
+#Crrl+A+D 跳出窗口
+#提示detached
+screen -ls #查看有多少窗口
+screen -r   #进入指定窗口
+#杀死进程
+kill -9  #进程名
+#自动清除死去的窗口
+screen -wipe 
