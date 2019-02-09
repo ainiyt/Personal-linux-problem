@@ -30,13 +30,17 @@ make install
 python get-pip.py
 
 
-
-
 #安装智能家居控制
 sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
 
 python3 -m pip install homeassistant
+#如果出现  Found existing installation: PyYAML 3.12
+#Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately 
+#determine which files belong to it which would lead to only a partial uninstall.
+#使用以下命令降级pip
+# pip install pip==9
 hass #--open-ui
+#
 #修改虚拟选项
 nano /root/.homeassistant/configuration.yaml
 #注释虚拟选项
