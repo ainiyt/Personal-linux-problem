@@ -1,0 +1,25 @@
+＃安装时出现未找到但假定已安装
+#dpkg：警告：无法找到软件包 libghc-language-python-dev 的文件名列表文件，现假定该软件包目前没有任何文件被安装在系统里。
+
+
+apt install aptitude
+sudo dpkg --configure -a
+dpkg -l | grep ^ii | awk '{print $2}' | grep -v XXX | xargs sudo aptitude reinstall 
+
+
+#以上 失败 ###下一个
+#!/bin/bash
+
+for pkg in `dpkg --get-selections | awk '{print $1}' | egrep -v '(dpkg|apt|mysql|mythtv)'` ; do apt-get -y --force-yes install --reinstall $pkg ; done
+
+#把以上建立一个.sh  如reinstall_all.sh
+#建立
+nano reinstall_all.sh
+#划归root用户
+sudo chown root:root reinstall_all.sh
+#给与可执行权限
+sudo chmod 755 reinstall_all.sh
+#执行
+sudo ./reinstall_all.sh
+
+#以上暂未有结果
