@@ -1,3 +1,4 @@
+apt-get install -y wget ca-certificates    apt-transport-https  curl net-tools  dpkg  
 du -sh /*     #查看各个目录大小
 getconf LONG_BIT  #系统多少位
 uname -m  #系统构架 
