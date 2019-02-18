@@ -5,3 +5,13 @@ uname -m  #系统构架
 find /  -name    #查找文件位置
 netstat -lnp|grep 80   #端口使用情况
 sudo apt-get remove <programname> 卸载
+#中文乱码
+apt-get install locales
+dpkg-reconfigure locales
+#en_US.UTF8
+#zh_CN GB2312
+#zh_CN GBK GBK
+#zh_CN UTF-8 UTF-8
+ nano /etc/default/locale
+ LANG=en_US.UTF-8
+######################
