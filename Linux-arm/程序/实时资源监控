@@ -1,3 +1,4 @@
 https://github.com/netdata/netdata
+#Debian 9 会出错
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 
