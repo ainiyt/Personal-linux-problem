@@ -2,3 +2,7 @@ https://github.com/netdata/netdata
 #Debian 9 会出错
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 
+########卸载
+wget https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/netdata-uninstaller.sh
+ chmod +x ./netdata-uninstaller.sh
+ ./netdata-uninstaller.sh --yes --env /etc/netdata/.environment
