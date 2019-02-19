@@ -1,5 +1,5 @@
 wget https://bootstrap.pypa.io/get-pip.py
-Python get-pip.py
+python get-pip.py
 #以上最后执行
 ###########查看版本#########
  python --version
