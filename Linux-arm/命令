@@ -1,3 +1,6 @@
+##解决停止容器会软重启的问题
+sudo update-rc.d -f sendsigs remove
+##############
 apt-get install -y wget ca-certificates    apt-transport-https  curl net-tools  dpkg  
 du -sh /*     #查看各个目录大小
 touch   #创建空文件
