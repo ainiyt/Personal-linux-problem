@@ -1,1 +1,17 @@
-usermod -a -G aid_inet,aid_net_raw mysql
+apt update
+###########apache2#############
+apt-get install  apache2 -y php  php-curl php-mbstring php-gd
+sudo service apache2 restart
+
+nano /etc/apache2/apache2.conf #添加
+AddType application/x-httpd-php .php
+####################
+
+###########数据库###########
+sudo apt-get install   -y  mysql-server  mysql-client  libmysqlclient-dev
+sudo service mysql restart
+###########管理器##############
+sudo apt-get install -y phpmyadmin  php-mbstring  php-gettext
+#################
+
+ usermod -a -G aid_inet,aid_net_raw mysql
