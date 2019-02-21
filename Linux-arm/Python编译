@@ -12,6 +12,8 @@ sudo apt-get install -y libevent-dev libssl-dev libffi-dev python-dev build-esse
 
 ###########################
 sudo apt-get install  -y build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev
+apt-get install  zlib*
+
 
 #注意安装编译环
 #编译Python
