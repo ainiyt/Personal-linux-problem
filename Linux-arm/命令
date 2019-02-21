@@ -1,3 +1,6 @@
+####安装第三方软件库
+apt-get install software-properties-common
+ sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
 ##解决停止容器会软重启的问题
 sudo update-rc.d -f sendsigs remove
 ##############
