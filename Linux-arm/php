@@ -1,0 +1,12 @@
+nano /etc/apt/sources.list
+
+deb http://repozytorium.mati75.eu/raspbian jessie-backports main contrib non-free
+＃deb-src http://repozytorium.mati75.eu/raspbian jessie-backports main contrib non-free
+
+
+############################
+gpg --keyserver pgpkeys.mit.edu --recv-key CCD91D6111A06851
+     gpg --armor --export CCD91D6111A06851 | apt-key add  - 
+######################
+apt-get update
+apt-get install php7.0 php7.0-opcache
