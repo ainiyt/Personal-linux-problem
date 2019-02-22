@@ -11,3 +11,4 @@ gpg --keyserver pgpkeys.mit.edu --recv-key CCD91D6111A06851
 apt-get update
 apt-get install php7.0 php7.0-opcache
 #######记得在apache中切换php版本
+ apt-get install   php-zip php-dompdf php-xml php-mbstring  php-curl php-mysql
