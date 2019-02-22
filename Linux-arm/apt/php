@@ -1,0 +1,2 @@
+##nextcloud
+apt-get install apache2  php7.0 php-zip php-dompdf php-xml php-mbstring  php-curl php-mysql
