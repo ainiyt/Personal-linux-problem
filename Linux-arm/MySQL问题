@@ -22,3 +22,14 @@ sudo apt-get install -y phpmyadmin  php-mbstring  php-gettext
 #root的plugin被修改成了auth_socket，用密码登陆的plugin应该是mysql_native_password。
 update mysql.user set authentication_string=PASSWORD('密码'),
 plugin='mysql_native_password' where user='root';
+
+##############卸载
+sudo apt-get --purge remove mysql-server
+sudo apt-get --purge remove mysql-client
+sudo apt-get --purge remove mysql-common
+
+###########
+apt-get autoremove
+apt-get autoclean
+rm /etc/mysql/ -R
+rm /var/lib/mysql/ -R
