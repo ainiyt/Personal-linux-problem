@@ -1,0 +1,10 @@
+echo "deb http://linux-packages.resilio.com/resilio-sync/deb resilio-sync non-free" | sudo tee /etc/apt/sources.list.d/resilio-sync.list
+wget -qO - https://linux-packages.resilio.com/resilio-sync/key.asc | sudo apt-key add -
+apt-get update
+sudo apt-get install resilio-sync
+ kill -9 $(pidof rslsync)
+ netstat -lnp|grep rslsync
+ 
+ #etc 不起作用 127.0
+ rslsync --dump-sample-config > sync.conf
+ /usr/bin/rslsync  --config /opt/sync.conf
