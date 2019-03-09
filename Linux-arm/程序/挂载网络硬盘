@@ -1,0 +1,5 @@
+sudo apt install fuse
+
+ curl https://rclone.org/install.sh | sudo bash
+ 
+rclone --vfs-cache-mode writes mount onedrive: /mnt/onedrive
