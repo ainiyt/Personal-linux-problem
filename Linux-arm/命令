@@ -29,3 +29,8 @@ dpkg-reconfigure locales
 # libssl-dev : Depends: libssl1.1 (= 1.1.0j-1~deb9u1) but 1.1.1a-2~20190131152537.8+stretch is to be 
 sudo apt-get install aptitude
 sudo aptitude install libssl-dev
+
+###################
+#下载时 解析错误
+nano /etc/resolv.conf
+nameserver 8.8.8.8
