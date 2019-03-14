@@ -14,6 +14,7 @@ uname -m  #系统构架
 find /  -name    #查找文件位置
 netstat -lnp|grep 80   #端口使用情况
 sudo apt-get remove <programname> 卸载
+ apt-cache policy  程序  #查看可安装
 #中文乱码
 apt-get install locales
 dpkg-reconfigure locales
