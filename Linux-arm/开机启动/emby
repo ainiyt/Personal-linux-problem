@@ -1,0 +1,77 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          emby-server
+# Required-Start:    $remote_fs $local_fs $network
+# Required-Stop:     $remote_fs $local_fs $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: starts instance of Emby
+# Description:       starts instance of Emby
+### END INIT INFO
+
+# chkconfig: 2345 20 80
+#The above indicates that the script should be started in levels 2, 3, 4, and 5, #that its start priority should be 20, and that its stop priority should be 80.
+# Load the VERBOSE setting and other rcS variables
+. /lib/init/vars.sh
+
+# Define LSB log_* functions.
+# Depend on lsb-base (>= 3.0-6) to ensure that this file is present.
+. /lib/lsb/init-functions
+
+NAME=emby-server
+CONF_FILE=/etc/${NAME}.conf
+DEFAULT_FILE=/etc/default/${NAME}
+
+APP_DIR=/opt/emby-server
+export FONTCONFIG_PATH=$APP_DIR/etc/fonts
+export ICU_DATA=$APP_DIR/share/icu/61.1
+export LD_LIBRARY_PATH=$APP_DIR/lib:$APP_DIR/lib/samba
+export LIBVA_DRIVERS_PATH=$APP_DIR/lib/dri
+export SSL_CERT_FILE=$APP_DIR/etc/ssl/certs/ca-certificates.crt
+
+# Source Emby server default configuration
+. $DEFAULT_FILE
+
+# Source Emby server user configuration overrides
+if [[ -f $CONF_FILE ]]; then
+  . $CONF_FILE
+else
+  echo "${CONF_FILE} not found using default settings.";
+fi
+
+# Path of emby binary
+DAEMON=${APP_DIR}/system/EmbyServer
+ARGS="-programdata $EMBY_DATA \
+  -ffmpeg $APP_DIR/bin/ffmpeg \
+  -ffprobe $APP_DIR/bin/ffprobe \
+  -restartexitcode 3 \
+  -updatepackage 'emby-server-deb_{version}_armhf.deb'"
+PIDFILE=${EMBY_PIDFILE-/var/run/emby-server.pid}
+
+case "$1" in
+  start)
+    log_daemon_msg "Starting $NAME daemon"
+    start-stop-daemon --start --quiet --background --chuid ${EMBY_USER}:${EMBY_GROUP} \
+        --make-pidfile --pidfile $PIDFILE \
+        --exec $DAEMON -- $ARGS
+    log_end_msg $?
+    ;;
+  stop)
+    log_daemon_msg "Stopping $NAME daemon"
+    start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 \
+        --remove-pidfile --pidfile $PIDFILE \
+        --exec $DAEMON -- $ARGS 
+    log_end_msg $?
+    ;;
+  status)
+    status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
+    ;;
+  restart|force-reload)
+    $0 stop || exit $?
+    $0 start || exit $?
+    ;;
+  *)
+    echo "Usage: /etc/init.d/emby-server {start|stop|status|restart|force-reload}" >&2
+    exit 3
+    ;;
+esac
