@@ -1,3 +1,7 @@
+apt install deluge-web
+apt install deluged
+
+######################
 apt-get install software-properties-common
 
 sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
