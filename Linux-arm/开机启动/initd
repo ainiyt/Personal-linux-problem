@@ -1,8 +1,8 @@
 nano /etc/init.d/
 ##添加开机启动
 
-update-rc.d 名字 defaults 99 
-update-rc.d -f 名字 remove  #卸载
+update-rc.d sss defaults 99 
+update-rc.d -f sss remove  #卸载
 
 
 
