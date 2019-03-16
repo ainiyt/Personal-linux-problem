@@ -57,11 +57,7 @@ case "$1" in
     log_end_msg $?
     ;;
   stop)
-    log_daemon_msg "Stopping $NAME daemon"
-    start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 \
-        --remove-pidfile --pidfile $PIDFILE \
-        --exec $DAEMON -- $ARGS 
-    log_end_msg $?
+  kill -9 $(pidof EmbyServer)
     ;;
   status)
     status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
