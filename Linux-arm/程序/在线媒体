@@ -1,9 +1,11 @@
 #Universal Media Server
 sudo apt-get install mediainfo openjdk-8-jre
- wget https://sourceforge.net/projects/unimediaserver/files/Official%20Releases/Linux/UMS-8.0.0-RC1.tgz/download
-tar -zxvf  download
-cd ums-8.0.0-RC1
+ wget https://sourceforge.net/projects/unimediaserver/files/Official%20Releases/Linux/UMS-8.0.0-RC1.tgz/downloa \
+tar -zxvf  download \
+cd ums-8.0.0-RC1 \
 ./UMS.sh
+
+
 ################
 wget https://github.com/MediaBrowser/Emby.Releases/releases/download/4.0.2.0/emby-server-deb_4.0.2.0_arm64.deb
 dpkg -i emby-server-deb_4.0.2.0_arm64.deb
