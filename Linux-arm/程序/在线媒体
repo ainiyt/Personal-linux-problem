@@ -1,9 +1,7 @@
 #Universal Media Server
 sudo apt-get install mediainfo openjdk-8-jre
  wget https://sourceforge.net/projects/unimediaserver/files/Official%20Releases/Linux/UMS-8.0.0-RC1.tgz/downloa \
-tar -zxvf  download \
-cd ums-8.0.0-RC1 \
-./UMS.sh
+tar -zxvf  downloa&&cd ums-8.0.0-RC&&./UMS.sh
 
 
 ################
