@@ -12,9 +12,11 @@ apt-get update && apt-get install ajenti
 service ajenti restart
 ###################
 curl https://raw.githubusercontent.com/ajenti/ajenti/master/scripts/install.sh | sudo bash -s -
-
-
-
+#########网页空白
+/usr/share/pyshared/socketio/handler.py
+/usr/share/pyshared/socketio/transports.py
+ ("Access-Control-Max-Age", 3600),
+   ("Access-Control-Max-Age", "3600"),
 
 
 
