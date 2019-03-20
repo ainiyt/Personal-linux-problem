@@ -12,3 +12,9 @@ sudo apt-get install qbittorrent-nox
 sudo apt-get install transmission-daemon
 #端口9091
 find / -name settings.json
+
+#################
+ apt install gkrellm-mldonkey irssi-scripts mldonkey-gui mldonkey-server 
+#######可下电驴 无法翻译  端口4080
+find / -name downloads.ini
+allowed_ips =  & "0.0.0.0/0";
