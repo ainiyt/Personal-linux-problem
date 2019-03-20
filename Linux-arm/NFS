@@ -1,0 +1,2 @@
+ apt install  nfs-ganesha nfs-ganesha-vfs
+nano /etc/ganesha/ganesha.conf
