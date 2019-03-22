@@ -10,11 +10,10 @@ dpkg -i emby-server-deb_4.0.2.0_arm64.deb
 #########################
 #red5
 
-mkdir -p /usr/share/red5
-export RED5_HOME=/usr/share/red5
-wget https://github.com/Red5/red5-server/releases/download/v1.0.10-RELEASE/red5-server-1.0.10.tar.gz
-
-tar -zxvf red5-server-1.0.10.tar.gz  -C  /usr/share/red5
-cd /usr/share/red5
+mkdir -p /usr/share/red5 \
+export RED5_HOME=/usr/share/red5 \
+wget https://github.com/Red5/red5-server/releases/download/v1.0.10-RELEASE/red5-server-1.0.10.tar.gz 
+tar -zxvf red5-server-1.0.10.tar.gz  -C  /usr/share/red5 \
+cd /usr/share/red5 \
 ./red5.sh &
-
+#
