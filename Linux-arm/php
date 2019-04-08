@@ -1,6 +1,6 @@
 nano /etc/apt/sources.list
 
-deb http://repozytorium.mati75.eu/raspbian jessie-backports main contrib non-free
+echo "deb http://repozytorium.mati75.eu/raspbian jessie-backports main contrib non-free" >> /etc/apt/sources.list
 #deb-src http://repozytorium.mati75.eu/raspbian jessie-backports main contrib non-free
 
 
