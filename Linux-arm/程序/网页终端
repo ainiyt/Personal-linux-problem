@@ -1,6 +1,8 @@
+sudo apt-get install shellinabox
+sudo /etc/init.d/shellinabox start
+4200
+#####################################
 https://cockpit-project.org/running
-
-
 
 
 
